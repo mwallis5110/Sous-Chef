@@ -21,6 +21,7 @@ const gallerydata = [
     starting_date: 'December 22, 2020 11:00:00',
     ending_date: 'March 19, 2021 19:00:00',
   },
+  
 ];
 
 const seedGallery = () => Gallery.bulkCreate(gallerydata);

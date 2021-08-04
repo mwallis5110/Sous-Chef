@@ -22,6 +22,10 @@ Recipe.init({
         type: DataTypes.TEXT,
         allowNull: false,
     },
+    filename: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
     // user_id: {
     //     type: DataTypes.STRING,
     //     references: {

@@ -1,9 +1,10 @@
 const router = require('express').Router();
 // module.exports = router;const router = require('express').Router();
 const { Recipe } = require('../models');
+const withAuth = require('../utils/auth')
 
-// route to get all dishes
-router.get('/', async(req, res) => {
+router.get('/', withAuth, async(req, res) => {
+    // check if user doesn't exist and if they don't res.redirect('/login') else do the next stuff
     // We find all dishes in the db and set the data equal to dishData
     const recipeData = await Recipe.findAll().catch((err) => {
         res.json(err);
@@ -12,7 +13,8 @@ router.get('/', async(req, res) => {
     const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
     // We render the template, 'all', passing in dishes, a new array of serialized objects.
     console.log(recipeData);
-    res.render('all', { recipes });
+    console.log(req.session)
+    res.render('all', { recipes, loggedIn: req.session.loggedIn, username: req.session.userName });
 });
 
 

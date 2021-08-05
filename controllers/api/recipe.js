@@ -4,7 +4,6 @@ const { findAll } = require('../../models/User');
 
 router.get("/find-recipes/", async(req, res) => {
         Recipe.findAll().then(allrecipes => console.log('recipe-page', allrecipes))
-
     })
     // router.post('/save-recipe', (req, res) => {
     //     Recipe.create(req.body) { user_id: }

@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Recipe } = require('../models');
+const withAuth = require('../utils/auth')
 
 // DASHBOARD page aka user custom page where user can see nav bar, saved recipes, grocery list
 router.get('/dashboard/:id', async(req, res) => {
@@ -68,8 +69,20 @@ router.get('/', async(req, res) => {
         // recipes
         loggedIn: req.session.loggedIn
     });
-
 });
+// router.get('/', withAuth, async(req, res) => {
+//     // check if user doesn't exist and if they don't res.redirect('/login') else do the next stuff
+//     // We find all dishes in the db and set the data equal to dishData
+//     const recipeData = await Recipe.findAll().catch((err) => {
+//         res.json(err);
+//     });
+//     // We use map() to iterate over dishData and then add .get({ plain: true }) each object to serialize it. 
+//     const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
+//     // We render the template, 'all', passing in dishes, a new array of serialized objects.
+//     console.log(recipeData);
+//     console.log(req.session)
+//     res.render('all', { recipes, loggedIn: req.session.loggedIn, username: req.session.userName });
+// });
 
 module.exports = router;
 

@@ -1,13 +1,30 @@
 const User = require('./User');
 const Recipe = require('./Recipe');
+const SavedRecipe = require('./Savedrecipe');
 
-
-User.hasMany(Recipe, {
+SavedRecipe.belongsTo(User,{
     foreignKey: 'user_id',
+    onDelete: 'CASCADE'
 });
 
-Recipe.belongsTo(User, {
+User.hasMany(SavedRecipe, {
     foreignKey: 'user_id',
+    onDelete:'CASCADE'
 });
 
-module.exports = { User, Recipe };
+User.hasMany(SavedRecipe, {
+    foreignKey: 'user_id',
+    onDelete:'CASCADE'
+});
+
+// SavedRecipe.hasMany(User, {
+//     foreignKey: 'savedrecipe_id',
+//     onDelete:'CASCADE'
+// });
+
+//Don't need since Revipes don't belong to a user until they are saved
+// Recipe.belongsTo(User, {
+//     foreignKey: 'user_id',
+// });
+
+module.exports = { User, Recipe, SavedRecipe };

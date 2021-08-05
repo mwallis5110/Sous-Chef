@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 class SavedRecipe extends Model {}
 
-Recipe.init({
+SavedRecipe.init({
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -39,7 +39,7 @@ Recipe.init({
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'recipe',
+    modelName: 'savedrecipe',
 });
 
 module.exports = SavedRecipe;

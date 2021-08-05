@@ -8,19 +8,20 @@ router.get("/find-recipes/", async(req, res) => {
     const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
     res.status(200).json(recipes)
 })
-router.post('/save-recipe', async(req, res) => {
-        const user_id = req.session.user_id
-        req.body.user_id = user_id
-        const response = await Recipe.create(req.body)
-        try {
-            // const user_id = req.session.user_id
-            // req.body.user_id = user_id
-            const response = await Recipe.create(req.body)
-            res.status(200).json(response.get({ plain: true }))
-        } catch (error) {
-            res.status(500).json(error)
-        }
-    })
+//Moved to savedRecipe
+// router.post('/save-recipe', async(req, res) => {
+//         const user_id = req.session.user_id
+//         req.body.user_id = user_id
+//         const response = await Recipe.create(req.body)
+//         try {
+//             // const user_id = req.session.user_id
+//             // req.body.user_id = user_id
+//             const response = await Recipe.create(req.body)
+//             res.status(200).json(response.get({ plain: true }))
+//         } catch (error) {
+//             res.status(500).json(error)
+//         }
+//     })
     // router.get('/mysavedRecipes', (req, res) => {
     //     Recipe.findAll(where: {
     //         user_id: req.body.user_id

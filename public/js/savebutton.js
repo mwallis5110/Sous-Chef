@@ -8,12 +8,12 @@ document.querySelectorAll(".saveButton").forEach((item) => {
         let data = event.target.dataset;
         let recipe = {
             title: data.title,
-            image: data.image,
+            filename: data.filename,
             directions: data.directions,
             ingredients: data.ingredients,
             id: data.id,
         }
-        fetch("/api/recipes/save-recipe", {
+        fetch("/api/savedrecipes", {
             method: "POST",
             headers: {
                 "Accept": "application/json",
@@ -23,6 +23,3 @@ document.querySelectorAll(".saveButton").forEach((item) => {
         })
     });
 });
-white_check_mark
-eyes
-raised_hands

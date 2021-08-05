@@ -26,14 +26,15 @@ Recipe.init({
         type: DataTypes.STRING,
         allowNull: false,
     },
-    user_id: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-        references: {
-            model: "user",
-            key: "id"
-        }
-    }
+    //Recipe does not need user id
+    // user_id: {
+    //     type: DataTypes.INTEGER,
+    //     allowNull: true,
+    //     references: {
+    //         model: "user",
+    //         key: "id"
+    //     }
+    //}
 
 }, {
     sequelize,

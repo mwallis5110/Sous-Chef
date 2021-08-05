@@ -2,7 +2,7 @@ const { Recipe } = require('../models');
 
 const recipeData = [{
         title: 'Thai-Inspired Watermelon Salad ',
-        ingredients: '1 large shallot roughly chopped, 1 large jalapeño cut into 4 pieces (with seeds for more spice!), 2small limes, 1 tablespoon palm sugar or light brown sugar, 10yellow cherry tomatoes halved, 3 tablespoons fish sauce, 6 cups cubed watermelon (from a 2-pound piece with rind), 1 ½cups packed cilantro leaves, ½cup lightly packed basil coarsely chopped, ¼cup salted peanuts, chopped',
+        ingredients: '1 large shallot roughly chopped ,1 large jalapeño cut into 4 pieces (with seeds for more spice!) ,2 small limes, 1 tablespoon palm sugar or light brown sugar ,10 yellow cherry tomatoes halved ,3 tablespoons fish sauce ,6 cups cubed watermelon (from a 2-pound piece with rind) ,1 ½cups packed cilantro leaves, ½cup lightly packed basil coarsely chopped, ¼cup salted peanuts, chopped',
         directions: '1 Using a large mortar and pestle (or a bowl with a cocktail muddler to smash) mash the shallot jalapeño halved lime and palm sugar in a bowl ,2 Transfer to a large bowl and add the tomatoes lime juice from the second lime and fish sauce and lightly mash about 10 times ,3 Add the watermelon cilantro and basil and gently toss then correct seasoning with more lime juice and fish sauce to taste. Garnish with peanuts.',
         filename: 'watermelon_salad.jpg',
         user_id: 1

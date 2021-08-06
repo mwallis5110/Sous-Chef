@@ -3,63 +3,46 @@
   <h3 class="gallery-name">Welcome {{username}}</h3>
   {{else }}
 
+<<<<<<< HEAD
   <h3 class="gallery-name">Sign Up or Log in below!</h3>
+=======
+  <h3 class="gallery-name">Welcome to Sous-Chef where you can browse and save recipes</h3>
+>>>>>>> 558d64131eb0a0dc62fb8792d91617f72575dbd2
   {{/if}}
-  {{!-- <h4>Opening Hour: {{format_time gallery.starting_date}}</h4>
-  <h4>Closing Hour: {{format_time gallery.ending_date}}</h4> --}}
-  {{!-- <section class="flex-row justify-center">
-    {{#each gallery.paintings as |painting|}}
-    {{> painting-details}}
-    {{/each}}
-  </section> --}}
+  {{#if loggedIn}}
+  <h3 class="gallery-name">Browse our curated recipe list and save your favorites</h3>
+  {{else}}
 </section>
-<div
-  id="carouselExampleSlidesOnly"
-  class="carousel slide"
-  data-bs-ride="carousel"
->
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img
-        src="/images/01-blossoming-apricot.jpg"
-        class="d-block w-100"
-        alt="..."
-      />
+      <img src="/images/01-blossoming-apricot.jpg" class="d-block w-100" alt="..." />
     </div>
     <div class="carousel-item">
-      <img
-        src="/images/02-cosmos-flowers.jpg"
-        class="d-block w-100"
-        alt="..."
-      />
+      <img src="/images/02-cosmos-flowers.jpg" class="d-block w-100" alt="..." />
     </div>
     <div class="carousel-item">
-      <img
-        src="/images/03-sand-sea-summer.jpg"
-        class="d-block w-100"
-        alt="..."
-      />
+      <img src="/images/03-sand-sea-summer.jpg" class="d-block w-100" alt="..." />
     </div>
   </div>
 </div>
 
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" />
+<link rel="stylesheet prefetch" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+{{/if}}
 
-<link
-  rel="stylesheet prefetch"
-  href="https://fonts.googleapis.com/icon?family=Material+Icons"
-/>
 {{#if loggedIn}}
-  {{#each recipes as |recipe|}}
-  {{> recipe-details}}
-  {{/each}}
-  <script src="js/savebutton.js"></script>
+{{#each recipes as |recipe|}}
+{{> recipe-details}}
+{{/each}}
+<script src="js/savebutton.js"></script>
 {{/if}}
 
 
 {{#unless loggedIn}}
+
 <body>
-  <div class="cotn_principal">
+  <div id="login-container" class="cotn_principal">
     <div class="cont_centrar">
 
       <div class="cont_login">
@@ -89,23 +72,19 @@
           <div class="cont_img_back_grey">
             <img
               src="https://images.unsplash.com/photo-1453831362806-3d5577f014a4?dpr=1&auto=compress,format&fit=crop&w=1199&h=812&q=80&cs=tinysrgb&crop="
-              alt=""
-            />
+              alt="" />
           </div>
 
         </div>
-       {{!-- animated login and sign up after click --}}
+        {{!-- animated login and sign up after click --}}
         <div class="cont_forms">
           <div class="cont_img_back_">
             <img
               src="https://images.unsplash.com/photo-1453831362806-3d5577f014a4?dpr=1&auto=compress,format&fit=crop&w=1199&h=812&q=80&cs=tinysrgb&crop="
-              alt=""
-            />
+              alt="" />
           </div>
           <div class="cont_form_login">
-            <a href="#" onclick="ocultar_login_sign_up()"><i
-                class="material-icons"
-              >&#xE5C4;</i></a>
+            <a href="#" onclick="ocultar_login_sign_up()"><i class="material-icons">&#xE5C4;</i></a>
             <h2>LOGIN</h2>
             <input id="login-email" type="text" placeholder="Email" />
             <input id="login-password" type="password" placeholder="Password" />
@@ -113,9 +92,7 @@
           </div>
 
           <div class="cont_form_sign_up">
-            <a href="#" onclick="ocultar_login_sign_up()"><i
-                class="material-icons"
-              >&#xE5C4;</i></a>
+            <a href="#" onclick="ocultar_login_sign_up()"><i class="material-icons">&#xE5C4;</i></a>
             <h2>SIGN UP</h2>
             <input type="text" id="email-signup" placeholder="Email" />
             <input type="text" id='username-signup' placeholder="User" />
@@ -132,63 +109,63 @@
   </div>
   <script src="./js/homepage.js"></script>
 
-  <script src="js/index.js"></script>
+
 </body>
 {{/unless}}
 
 <script>
   const loginFormHandler = async (event) => {
-  event.preventDefault();
+    event.preventDefault();
 
-  const email = document.querySelector('#login-email').value.trim();
-  const password = document.querySelector('#login-password').value.trim();
-  console.log('email, password', email, password)
+    const email = document.querySelector('#login-email').value.trim();
+    const password = document.querySelector('#login-password').value.trim();
+    console.log('email, password', email, password)
 
-  if (email && password) {
-    const response = await fetch('/api/users/login', {
-      method: 'POST',
-      body: JSON.stringify({ email, password }),
-      headers: { 'Content-Type': 'application/json' },
-    });
+    if (email && password) {
+      const response = await fetch('/api/users/login', {
+        method: 'POST',
+        body: JSON.stringify({ email, password }),
+        headers: { 'Content-Type': 'application/json' },
+      });
 
-    if (response.ok) {
-      document.location.replace('/');
-    } else {
-      alert('Failed to log in.');
+      if (response.ok) {
+        document.location.replace('/');
+      } else {
+        alert('Failed to log in.');
+      }
     }
-  }
-};
+  };
 
-const signupFormHandler = async (event) => {
-  event.preventDefault();
+  const signupFormHandler = async (event) => {
+    event.preventDefault();
 
-  const username = document.querySelector('#username-signup').value.trim();
-  const email = document.querySelector('#email-signup').value.trim();
-  const password = document.querySelector('#password-signup').value.trim();
+    const username = document.querySelector('#username-signup').value.trim();
+    const email = document.querySelector('#email-signup').value.trim();
+    const password = document.querySelector('#password-signup').value.trim();
+    console.log('TEST --------', username, email, password)
+    if (username && email && password) {
+      const response = await fetch('/api/users', {
+        method: 'POST',
+        body: JSON.stringify({ username, email, password }),
+        headers: { 'Content-Type': 'application/json' },
+      });
 
-  if (username && email && password) {
-    const response = await fetch('/api/users', {
-      method: 'POST',
-      body: JSON.stringify({ username, email, password }),
-      headers: { 'Content-Type': 'application/json' },
-    });
-
-    if (response.ok) {
-      document.location.replace('/');
-    } else {
-      alert('Failed to sign up.');
+      if (response.ok) {
+        document.location.replace('/');
+      } else {
+        alert('Failed to sign up.');
+      }
     }
-  }
-};
+  };
 
-if(document.getElementById('login-btn')){
-document
-  .getElementById('login-btn')
-  .addEventListener('click', loginFormHandler);
+  if (document.getElementById('login-btn')) {
+    document
+      .getElementById('login-btn')
+      .addEventListener('click', loginFormHandler);
 
-document
-  .getElementById('signup-btn')
-  .addEventListener('click', signupFormHandler); 
+    document
+      .getElementById('signup-btn')
+      .addEventListener('click', signupFormHandler);
   }
 
 

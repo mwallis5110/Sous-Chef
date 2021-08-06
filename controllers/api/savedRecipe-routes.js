@@ -8,7 +8,7 @@ router.post("/", withAuth, async(req, res) => {
 
     try {
         const user_id = req.session.user_id
-            // req.body.user_id = user_id
+
 
         console.log('SESSION data', req.session)
         const savedrecipeData = await SavedRecipe.create({
@@ -27,8 +27,6 @@ router.post("/", withAuth, async(req, res) => {
 });
 router.delete("/:id", withAuth, async(req, res) => {
     try {
-        // const user_id = req.session.user_id
-        // req.body.user_id = user_id
         const SavedRecipe = await SavedRecipe.destroy({
             where: {
                 id: req.params.id,
@@ -39,7 +37,6 @@ router.delete("/:id", withAuth, async(req, res) => {
             res.status(404).json({ message: "No recipe found!" });
             return;
         }
-
         res.status(200).json(SavedRecipe);
     } catch (error) {
         res.status(500).json(error);

@@ -1,8 +1,3 @@
-// let saveRecipe = document.getElementsByClassName("saveButton");
-// saveRecipe.forEach(recipe => recipe.addEventListener("click", function (e) {
-//   console.log(e.target.dataset);
-//   console.log(e.target.title);
-// }));
 console.log("JS FILE LAODED!!!!!!!!!!!");
 document.querySelectorAll(".saveButton").forEach((item) => {
     item.addEventListener("click", (event) => {

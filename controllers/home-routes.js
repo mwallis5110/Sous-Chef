@@ -1,8 +1,8 @@
-const router = require('express').Router();
-const { Recipe } = require('../models');
-const withAuth = require('../utils/auth')
-    // DASHBOARD page aka user custom page where user can see nav bar, saved recipes, grocery list
-router.get('/dashboard/:id', async(req, res) => {
+const router = require("express").Router();
+const { Recipe, SavedRecipe } = require("../models");
+const withAuth = require("../utils/auth");
+// DASHBOARD page aka user custom page where user can see nav bar, saved recipes, grocery list
+router.get("/dashboard/:id", async(req, res) => {
     // if (!req.session.loggedIn) {
     //     res.redirect('/login');
     // } else {
@@ -28,38 +28,65 @@ router.get('/dashboard/:id', async(req, res) => {
     // });
 });
 // ALL RECIPES LIBRARY page aka where user can see nav bar, list of all recipes to click on and save to dashboard
-router.get('/allrecipes', async(req, res) => {
+router.get("/allrecipes", async(req, res) => {
     if (!req.session.loggedIn) {
-        res.redirect('/login');
+        res.redirect("/login");
     } else {
         const recipeData = await Recipe.findAll().catch((err) => {
             res.json(err);
         });
         const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
         // console.log(recipeData);
-        res.render('all-recipes', {
+        res.render("all-recipes", {
             recipes,
             loggedIn: req.session.loggedIn,
         });
     }
 });
-router.get('/login', (req, res) => {
+
+router.get("/myrecipes", async(req, res) => {
+    if (!req.session.loggedIn) {
+        res.redirect("/login");
+    } else {
+        const recipeData = await SavedRecipe.findAll({
+            where: { user_id: req.session.user_id },
+        }).catch((err) => {
+            res.json(err);
+        });
+        const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
+        console.log(recipeData);
+        res.render("my-recipes", {
+            recipes,
+            loggedIn: req.session.loggedIn,
+            username: req.session.userName
+        });
+    }
+});
+
+router.get("/login", (req, res) => {
     if (req.session.loggedIn) {
-        res.redirect('/');
+        res.redirect("/");
         return;
     }
-    res.render('login');
+    res.render("login");
 });
 // WELCOME page aka home where user can see nav bar, jumbotron, about, and login
-router.get('/', async(req, res) => {
+router.get("/", async(req, res) => {
     // const recipeData = await Recipe.findAll().catch((err) => {
     //     res.json(err);
     // });
     // const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
     // console.log(recipeData);
-    res.render('homepage', {
+    const recipeData = await Recipe.findAll().catch((err) => {
+        res.json(err);
+    });
+    const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
+    // console.log(recipeData);
+    res.render("homepage", {
         // recipes
-        loggedIn: req.session.loggedIn
+        loggedIn: req.session.loggedIn,
+        username: req.session.userName,
+        recipes: recipes
     });
 });
 // router.get('/', withAuth, async(req, res) => {
@@ -68,7 +95,7 @@ router.get('/', async(req, res) => {
 //     const recipeData = await Recipe.findAll().catch((err) => {
 //         res.json(err);
 //     });
-//     // We use map() to iterate over dishData and then add .get({ plain: true }) each object to serialize it. 
+//     // We use map() to iterate over dishData and then add .get({ plain: true }) each object to serialize it.
 //     const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
 //     // We render the template, 'all', passing in dishes, a new array of serialized objects.
 //     console.log(recipeData);

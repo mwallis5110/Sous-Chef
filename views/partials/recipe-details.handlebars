@@ -1,18 +1,24 @@
 <section class="card">
   {{!-- <a href="/recipe/{{id}}"> --}}
-    <img src="/images/{{filename}}">
-    <div class="painting-details">
-      <h3>{{title}}</h3>
-      <p>Ingredients: {{ingredients}}</p>
-      <p>Directions: {{ directions}}</p>
+    {{!-- <img src=">
+    <div class=" painting-details">
+    <h3>{{title}}</h3>
+    <p>Ingredients: {{ingredients}}</p>
+    <p>Directions: {{ directions}}</p>
     </div>
-    <button class="saveButton" data-image="{{filename}}" data-title="{{title}}" data-id="{{id}}" data-ingredients="{{ingredients}}" data-directions="{{directions}}">Save Button</button>
+    <button class="saveButton" data-image="{{filename}}" data-title="{{title}}" data-id="{{id}}"
+      data-ingredients="{{ingredients}}" data-directions="{{directions}}">Save Button</button> --}}
     {{!--
   </a> --}}
+  <div class="card" style="width: 18rem;">
+    <img src="/images/{{filename}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{title}}</h5>
+      <p class="card-text">Ingredients: {{ingredients}}</p>
+      <p class="card-text">Directions: {{ directions}}</p>
+
+      <button class="saveButton btn btn-light" data-image="{{filename}}" data-title="{{title}}" data-id="{{id}}"
+        data-ingredients="{{ingredients}}" data-directions="{{directions}}">Save Button</button> --}}
+    </div>
+  </div>
 </section>
-
-
-
-
-
-

@@ -1,6 +1,20 @@
-<section class="card">
+
   {{!-- <a href="/recipe/{{id}}"> --}}
-    <img src="/images/{{filename}}">
+<div class="container">
+  <div class="row justify-content-between">
+    <div class="col-lg-6">
+      <div class="card" style= "width:30rem">
+      {{!-- <div class="card-body"> --}}
+        <img class="card-img-top" src="/images/{{filename}}">
+        <h5 class="card-title">{{title}}</h5>
+        <p class="card-text">Ingredients: {{ingredients}}</p>
+        <p class="card-text">Directions: {{ directions}}</p>
+        <button class="saveButton" data-image="{{filename}}" data-title="{{title}}" data-id="{{id}}" data-ingredients="{{ingredients}}" data-directions="{{directions}}">Save Button</button>
+      </div>
+    </div>
+  </div>
+</div>
+    {{!-- <img src="/images/{{filename}}">
     <div class="painting-details">
       <h3>{{title}}</h3>
       <p>Ingredients: {{ingredients}}</p>
@@ -8,7 +22,7 @@
     </div>
     <button class="saveButton" data-image="{{filename}}" data-title="{{title}}" data-id="{{id}}" data-ingredients="{{ingredients}}" data-directions="{{directions}}">Save Button</button>
     {{!--
-  </a> --}}
+  </a> --}} 
 </section>
 
 

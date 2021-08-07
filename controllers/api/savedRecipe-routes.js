@@ -4,8 +4,6 @@ const withAuth = require("../../utils/auth");
 //POST will create and save recipe
 //Leaving as / because it will assign id when you create new saved recipes table
 router.post("/", withAuth, async(req, res) => {
-    console.log("WE HIT THE SAVE RECIPE ROUTE!!!!!!!!!");
-
     try {
         const user_id = req.session.user_id
 
@@ -27,19 +25,21 @@ router.post("/", withAuth, async(req, res) => {
 });
 router.delete("/:id", withAuth, async(req, res) => {
     try {
-        const SavedRecipe = await SavedRecipe.destroy({
+        console.log(req.params.id, req.session)
+        const deleteRecipe = await SavedRecipe.destroy({
             where: {
                 id: req.params.id,
                 user_id: req.session.user_id,
             },
         });
-        if (!SavedRecipe) {
+        if (!deleteRecipe) {
             res.status(404).json({ message: "No recipe found!" });
             return;
         }
-        res.status(200).json(SavedRecipe);
+        res.status(200).json(deleteRecipe);
     } catch (error) {
         res.status(500).json(error);
     }
+
 });
 module.exports = router;

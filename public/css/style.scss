@@ -19,6 +19,29 @@ body {
     background-color: var(--quatrinary);
 }
 
+#wrapper {
+    justify-content: center;
+    flex-direction: column;
+    background-color: #9ed2dc;
+    background: linear-gradient( 180deg, #56872E, #f5c44f, #f29321, #f58870, #56872E);
+    background-size: 1000% 1000%;
+    -webkit-animation: AnimationName 100s ease-in-out infinite;
+    -moz-animation: AnimationName 100s ease-in-out infinite;
+    animation: AnimationName 100s ease-in-out infinite;
+    display: flex;
+}
+
+.carousel-item {
+    min-height: 500px;
+    max-height: 500px;
+    min-width: 100%;
+    img {
+        min-height: 500px;
+        max-height: 500px;
+        min-width: 100%;
+    }
+}
+
 a {
     color: var(--dark);
     text-decoration: none;
@@ -31,8 +54,9 @@ a:visited {
 header {
     padding: 40px;
     text-align: center;
-    background: var(--primary);
-    color: var(--light);
+    background: #56872E;
+    color: white;
+    width: 100%;
 }
 
 main {
@@ -50,26 +74,42 @@ aside {
 }
 
 nav {
-    display: flex;
-    background-color: var(--secondary);
+    a {
+        color: #80afdf;
+        font-weight: bold;
+        text-decoration: none;
+        text-align: center;
+        vertical-align: bottom;
+        padding: 4px;
+        font-family: 'Caveat', cursive;
+    }
+    span {
+        padding: 0 10px 0 10px;
+    }
 }
 
-nav a {
-    color: var(--light);
-    padding: 14px 20px;
-    text-decoration: none;
+header:hover,
+nav a:hover,
+h2:hover,
+a:hover,
+i:hover {
+    color: rgb(181, 230, 160);
+}
+
+nav {
+    background-color: #e5f1eb;
+    color: #0e4813;
     text-align: center;
-}
-
-nav a:hover {
-    color: var(--secondary);
-    background-color: var(--dark);
+    font-family: "Caveat", cursive;
+    font-size: 25px;
+    width: 100%;
+    margin-bottom: 14px;
 }
 
 .gallery {
     flex: 4;
-    background-color: #fff;
-    padding: 50px;
+    background-color: transparent;
+    // padding: 50px;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -115,12 +155,16 @@ img {
 /* CARDS */
 
 .card {
-    margin: 20px;
+    margin: 25px;
     flex: 0 1 300px;
-    border: 7px double var(--dark);
+    border: 3px solid var(--dark);
     border-radius: 10px;
-    background-color: var(--light);
+    background-color: white;
     color: var(--dark);
+    box-shadow: 8px 8px 15px #585858;
+    min-width: 29rem;
+    overflow: scroll;
+    max-height: 505px;
 }
 
 .login-card {
@@ -153,14 +197,8 @@ img {
 }
 
 .gallery-name {
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    text-shadow: 2px 2px 5px var(--secondary);
-    border: 10px groove var(--light);
-    padding-top: 30px;
-    padding-bottom: 30px;
-    padding-right: 100px;
-    padding-left: 100px;
+    font-size: 50px;
+    font-family: 'Caveat', cursive;
 }
 
 
@@ -171,4 +209,425 @@ img {
     flex-flow: column wrap;
     align-content: flex-start;
     align-items: center;
+}
+
+#banner-title {
+    font-family: "Cedarville Cursive", cursive;
+    font-size: 73px;
+    font-style: bold;
+    font-weight: 500;
+    -webkit-text-stroke: 2px #0e4813;
+    color: #f9fafb;
+}
+
+#login-container {
+    background-color: #4c7863;
+    max-height: 500px;
+}
+
+
+/* login codepen ----------------------------*/
+
+* {
+    margin: 0px auto;
+    padding: 0px;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+}
+
+.cotn_principal {
+    /* position: relative; */
+    width: 100%;
+    height: 100%;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cfd8dc+0,607d8b+100,b0bec5+100 */
+    /* background: none; */
+    /* Old browsers */
+}
+
+.cont_centrar {
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+.cont_login {
+    position: relative;
+    width: 640px;
+    left: 50%;
+    margin-left: -320px;
+}
+
+.cont_back_info {
+    position: relative;
+    float: left;
+    width: 640px;
+    height: 280px;
+    overflow: hidden;
+    background-color: #fff;
+    margin-top: 100px;
+    box-shadow: 1px 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.cont_forms {
+    position: absolute;
+    overflow: hidden;
+    top: 100px;
+    left: 0px;
+    width: 320px;
+    height: 280px;
+    background-color: #eee;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.cont_forms_active_login {
+    box-shadow: 1px 10px 30px -10px rgba(0, 0, 0, 0.5);
+    height: 420px;
+    top: 20px;
+    left: 0px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.cont_forms_active_sign_up {
+    box-shadow: 1px 10px 30px -10px rgba(0, 0, 0, 0.5);
+    height: 420px;
+    top: 20px;
+    left: 320px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.cont_img_back_grey {
+    position: absolute;
+    width: 950px;
+    top: -80px;
+    left: -116px;
+}
+
+.cont_img_back_grey>img {
+    width: 100%;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    opacity: 0.2;
+    animation-name: animar_fondo;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.cont_img_back_ {
+    position: absolute;
+    width: 950px;
+    top: -80px;
+    left: -116px;
+}
+
+.cont_img_back_>img {
+    width: 100%;
+    opacity: 0.3;
+    animation-name: animar_fondo;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.cont_forms_active_login>.cont_img_back_ {
+    top: 0px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.cont_forms_active_sign_up>.cont_img_back_ {
+    top: 0px;
+    left: -435px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.cont_info_log_sign_up {
+    position: absolute;
+    width: 640px;
+    height: 280px;
+    top: 100px;
+    z-index: 1;
+}
+
+.col_md_login {
+    position: relative;
+    float: left;
+    width: 50%;
+}
+
+.col_md_login>h2 {
+    font-weight: 400;
+    margin-top: 70px;
+    color: #757575;
+}
+
+.col_md_login>p {
+    font-weight: 400;
+    margin-top: 15px;
+    width: 80%;
+    color: #37474F;
+}
+
+.btn_login {
+    background-color: #FF9800;
+    border: none;
+    padding: 10px;
+    width: 200px;
+    border-radius: 3px;
+    box-shadow: 1px 5px 20px -5px rgba(0, 0, 0, 0.4);
+    color: #fff;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.col_md_sign_up {
+    position: relative;
+    float: left;
+    width: 50%;
+}
+
+.cont_ba_opcitiy>h2 {
+    font-weight: 400;
+    color: #fff;
+}
+
+.cont_ba_opcitiy>p {
+    font-weight: 400;
+    margin-top: 15px;
+    color: #fff;
+}
+
+
+/* ----------------------------------
+  background text    
+  ------------------------------------
+   */
+
+.cont_ba_opcitiy {
+    position: relative;
+    background-color: rgba(187, 168, 170, 0.79);
+    width: 80%;
+    border-radius: 3px;
+    margin-top: 60px;
+    padding: 15px 0px;
+}
+
+.btn_sign_up {
+    background-color: #f44336;
+    border: none;
+    padding: 10px;
+    width: 200px;
+    border-radius: 3px;
+    box-shadow: 1px 5px 20px -5px rgba(0, 0, 0, 0.4);
+    color: #fff;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.cont_forms_active_sign_up {
+    z-index: 2;
+}
+
+@-webkit-keyframes identifier {
+    from {
+        -webkit-transform: scale(1) translate(0px);
+        -moz-transform: scale(1) translate(0px);
+        -ms-transform: scale(1) translate(0px);
+        -o-transform: scale(1) translate(0px);
+        transform: scale(1) translate(0px);
+    }
+    to {
+        -webkit-transform: scale(1.5) translate(50px);
+        -moz-transform: scale(1.5) translate(50px);
+        -ms-transform: scale(1.5) translate(50px);
+        -o-transform: scale(1.5) translate(50px);
+        transform: scale(1.5) translate(50px);
+    }
+}
+
+@-o-keyframes identifier {
+    from {
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+        transform: scale(1);
+    }
+    to {
+        -webkit-transform: scale(1.5);
+        -moz-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+        -o-transform: scale(1.5);
+        transform: scale(1.5);
+    }
+}
+
+@-moz-keyframes identifier {
+    from {
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+        transform: scale(1);
+    }
+    to {
+        -webkit-transform: scale(1.5);
+        -moz-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+        -o-transform: scale(1.5);
+        transform: scale(1.5);
+    }
+}
+
+@keyframes identifier {
+    from {
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+        transform: scale(1);
+    }
+    to {
+        -webkit-transform: scale(1.5);
+        -moz-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+        -o-transform: scale(1.5);
+        transform: scale(1.5);
+    }
+}
+
+.cont_form_login {
+    position: absolute;
+    opacity: 0;
+    display: none;
+    width: 320px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.cont_forms_active_login {
+    z-index: 2;
+}
+
+
+/* .cont_forms_active_login>.cont_form_login {} */
+
+.cont_form_sign_up {
+    position: absolute;
+    width: 320px;
+    float: left;
+    opacity: 0;
+    display: none;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.cont_form_sign_up>input {
+    text-align: left;
+    padding: 15px 5px;
+    margin-left: 10px;
+    margin-top: 20px;
+    width: 260px;
+    border: none;
+    color: #757575;
+}
+
+.cont_form_sign_up>h2 {
+    margin-top: 50px;
+    font-weight: 400;
+    color: #757575;
+}
+
+.cont_form_login>input {
+    padding: 15px 5px;
+    margin-left: 10px;
+    margin-top: 20px;
+    width: 260px;
+    border: none;
+    text-align: left;
+    color: #757575;
+}
+
+.cont_form_login>h2 {
+    margin-top: 110px;
+    font-weight: 400;
+    color: #757575;
+}
+
+.cont_form_login>a,
+.cont_form_sign_up>a {
+    color: #757575;
+    position: relative;
+    float: left;
+    margin: 10px;
+    margin-left: 30px;
+}
+
+.deleteButton {
+    cursor: pointer;
+    background-color: rgb(165, 71, 71);
+    color: white;
+}
+
+@-webkit-keyframes AnimationName {
+    0% {
+        background-position: 50% 0%
+    }
+    50% {
+        background-position: 50% 100%
+    }
+    100% {
+        background-position: 50% 0%
+    }
+}
+
+@-moz-keyframes AnimationName {
+    0% {
+        background-position: 50% 0%
+    }
+    50% {
+        background-position: 50% 100%
+    }
+    100% {
+        background-position: 50% 0%
+    }
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 50% 0%
+    }
+    50% {
+        background-position: 50% 100%
+    }
+    100% {
+        background-position: 50% 0%
+    }
 }

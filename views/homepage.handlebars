@@ -1,4 +1,4 @@
-<section class="container">
+<section class="">
   {{#if loggedIn}}
   <h3 class="gallery-name">Welcome {{username}}</h3>
   {{else }}
@@ -9,16 +9,37 @@
   <h3 class="gallery-name">Browse our curated recipe list and save your favorites</h3>
   {{else}}
 </section>
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+<div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="/images/01-blossoming-apricot.jpg" class="d-block w-100" alt="..." />
+    <div class="carousel-item active" data-bs-interval="5000">
+      <img src="/images/carousel_1.jpg" class="d-block w-100" alt="..." />
     </div>
-    <div class="carousel-item">
-      <img src="/images/02-cosmos-flowers.jpg" class="d-block w-100" alt="..." />
+    <div class="carousel-item" data-bs-interval="5000">
+      <img src="/images/carousel_2.png" class="d-block w-100" alt="..." />
     </div>
-    <div class="carousel-item">
-      <img src="/images/03-sand-sea-summer.jpg" class="d-block w-100" alt="..." />
+    <div class="carousel-item" data-bs-interval="5000">
+      <img src="/images/carousel_3.jpg" class="d-block w-100" alt="..." />
+    </div>
+    <div class="carousel-item" data-bs-interval="5000">
+      <img src="/images/carousel_4.jpg" class="d-block w-100" alt="..." />
+    </div>
+    <div class="carousel-item" data-bs-interval="5000">
+      <img src="/images/carousel_5.png" class="d-block w-100" alt="..." />
+    </div>
+    <div class="carousel-item" data-bs-interval="5000">
+      <img src="/images/carousel_6.jpg" class="d-block w-100" alt="..." />
+    </div>
+    <div class="carousel-item" data-bs-interval="5000">
+      <img src="/images/carousel_7.jpg" class="d-block w-100" alt="..." />
+    </div>
+    <div class="carousel-item" data-bs-interval="5000">
+      <img src="/images/carousel_8.jpg" class="d-block w-100" alt="..." />
+    </div>
+    <div class="carousel-item" data-bs-interval="5000">
+      <img src="/images/carousel_9.jpg" class="d-block w-100" alt="..." />
+    </div>
+    <div class="carousel-item" data-bs-interval="5000">
+      <img src="/images/carousel_10.png" class="d-block w-100" alt="..." />
     </div>
   </div>
 </div>
@@ -28,12 +49,15 @@
 {{/if}}
 
 {{#if loggedIn}}
-{{#each recipes as |recipe|}}
-{{> recipe-details}}
-{{/each}}
+<div class="container">
+  <div class="row">
+    {{#each recipes as |recipe|}}
+    {{> recipe-details}}
+    {{/each}}
+  </div>
+</div>
 <script src="js/savebutton.js"></script>
 {{/if}}
-
 
 {{#unless loggedIn}}
 
@@ -104,8 +128,7 @@
     </div>
   </div>
   <script src="./js/homepage.js"></script>
-<script src="./js/login.js"></script>
+  <script src="./js/login.js"></script>
 
 </body>
 {{/unless}}
-

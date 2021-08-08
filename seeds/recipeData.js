@@ -25,7 +25,7 @@ const recipeData = [{
         title: 'Grilled Asparagus with Egg',
         ingredients: '2 tablespoons olive oil 6 asparagus spears trimmed, 1 egg,kosher salt and freshly ground black pepper to taste. Hot sauce of your choice for serving.',
         directions: '1 In a bowl toss asparagus in 1 tablespoon olive oil kosher salt and pepper. Preheat a grill pan (such as the Cravings nonstick enamel grill pan) over medium-high heat add asparagus and immediately cover (with any lid you have that will cover the asparagus fully) to steam-grill. Keep covered for 3 minutes then uncover flip the asparagus and grill for 2 more minutes. If you like your asparagus a little softer grill for an additional minute. Transfer to a plate and cover to keep warm. 2. Heat a nonstick skillet over medium-high heat for a few minutes and add the remaining oil to the skillet. Crack the egg into the skillet and cook 1 ½ minutes until the yolk just sets then swirl the pan gently so the egg slides around and some of the oil pools around the edges of the whites. Cook until the whites are set golden around the edges and slightly lacy but the yolks are still runny 2–3 minutes. 3. Lift the egg out of the pan leaving behind as much oil as you like and place it on top of the asparagus. Season with more salt and pepper and serve right away—ideally with plenty of hot sauce.',
-        filename: 'asparagus-egg.jpg',
+        filename: 'asparagus_egg.jpg',
 
     },
     {

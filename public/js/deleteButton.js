@@ -17,8 +17,7 @@ document.querySelectorAll(".deleteButton").forEach((item) => {
                 Accept: "application/json",
                 "Content-Type": "application/json",
             },
-
         });
-        event.target.parentNode.remove()
+        event.target.parentElement.remove()
     });
 });

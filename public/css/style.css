@@ -1,14 +1,3 @@
-:root {
-  --primary: #3d5852;
-  --secondary: #86938f;
-  --tertiary: #5e877f;
-  --quatrinary: #6c6b67;
-  --light: #e3e4e3;
-  --dark: #182c23;
-  --error: rgb(228, 46, 1);
-  --border-radius: 0.3rem;
-}
-
 body {
   font-family: Arial;
   margin: 0;
@@ -16,19 +5,22 @@ body {
   flex-direction: column;
   min-height: 100vh;
   justify-content: flex-start;
-  background-color: var(--quatrinary);
+  background-color: #9ed2dc;
 }
 
 #wrapper {
   justify-content: center;
   flex-direction: column;
   background-color: #9ed2dc;
-  background: linear-gradient(180deg, #56872E, #f5c44f, #f29321, #f58870, #56872E);
+  background: linear-gradient(180deg, #cbe6ec, #fad5a8, #c7e4af, #cbe6ec);
   background-size: 1000% 1000%;
-  -webkit-animation: AnimationName 100s ease-in-out infinite;
-  -moz-animation: AnimationName 100s ease-in-out infinite;
-  animation: AnimationName 100s ease-in-out infinite;
+  -webkit-animation: AnimationName 50s ease-in-out infinite;
+  -moz-animation: AnimationName 50s ease-in-out infinite;
+  animation: AnimationName 50s ease-in-out infinite;
   display: flex;
+  width: 100%;
+  height: 100%;
+  background: cover;
 }
 
 .carousel-item {
@@ -42,21 +34,17 @@ body {
   min-width: 100%;
 }
 
-a {
-  color: black;
-  text-decoration: none;
-}
-
-a:visited {
-  color: inherit;
-}
-
 header {
-  padding: 40px;
+  padding: 20px 5px 10px 5px;
   text-align: center;
-  background: #56872E;
+  background: #9ed2dc;
   color: white;
   width: 100%;
+  background: linear-gradient(180deg, #c7e4af, #fad5a8, #cbe6ec, #c7e4af);
+  background-size: 1000% 1000%;
+  -webkit-animation: AnimationName 50s ease-in-out infinite;
+  -moz-animation: AnimationName 50s ease-in-out infinite;
+  animation: AnimationName 50s ease-in-out infinite;
 }
 
 main {
@@ -67,23 +55,27 @@ main {
 
 aside {
   flex: 0;
-  background-color: var(--tertiary);
+  background-color: #9ed2dc;
   padding: 80px;
   text-align: left;
-  color: var(--light);
+  color: #cbe6ec;
 }
 
-nav a {
-  color: #80afdf;
+nav {
+  background-color: rgba(253, 253, 250, 0.5);
+  width: 100%;
+}
+nav a,
+nav span {
+  color: #2b6b78;
   font-weight: bold;
   text-decoration: none;
   text-align: center;
   vertical-align: bottom;
   padding: 4px;
   font-family: "Caveat", cursive;
-}
-nav span {
-  padding: 0 10px 0 10px;
+  font-size: 25px;
+  margin-bottom: 14px;
 }
 
 header:hover,
@@ -91,17 +83,7 @@ nav a:hover,
 h2:hover,
 a:hover,
 i:hover {
-  color: #b5e6a0;
-}
-
-nav {
-  background-color: #e5f1eb;
-  color: #0e4813;
-  text-align: center;
-  font-family: "Caveat", cursive;
-  font-size: 25px;
-  width: 100%;
-  margin-bottom: 14px;
+  color: #9ed2dc;
 }
 
 .gallery {
@@ -142,23 +124,28 @@ img {
   font-weight: bold;
 }
 
-.deleteButton {
-  background-color: #572424;
-  padding: 1rem;
-  cursor: pointer;
+/* CARDS */
+.card::-webkit-scrollbar {
+  background-color: rgba(253, 253, 250, 0.5);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
-/* CARDS */
+.card::-webkit-scrollbar-thumb {
+  background-color: #cbe6ec;
+  border-radius: 10px;
+}
+
 .card {
   margin: 25px;
   flex: 0 1 300px;
-  border: 3px solid var(--dark);
+  border: 3px solid #2b6b78;
   border-radius: 10px;
-  background-color: white;
-  color: var(--dark);
+  background-color: rgba(253, 253, 250, 0.5);
+  color: #2b6b78;
   box-shadow: 8px 8px 15px #585858;
-  min-width: 29rem;
-  overflow: scroll;
+  min-width: 33rem;
+  overflow: auto;
   max-height: 505px;
 }
 
@@ -167,20 +154,20 @@ img {
   flex: 0 0 50%;
   max-width: 50%;
   padding: 5px;
-  border: 3px solid var(--dark);
-  border-radius: var(--border-radius);
+  border: 3px solid #2b6b78;
+  border-radius: #2b6b78;
   border-style: double;
   border-width: thick;
   background-color: #577a7c;
-  color: var(--light);
+  color: #cbe6ec;
 }
 
 .card header {
-  color: var(--light);
+  color: #cbe6ec;
   font-weight: bold;
   text-transform: uppercase;
   margin: 0;
-  background-color: var(--tertiary);
+  background-color: #9ed2dc;
   padding: 0.625rem;
   border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
 }
@@ -194,6 +181,9 @@ img {
 .gallery-name {
   font-size: 50px;
   font-family: "Caveat", cursive;
+  color: #38571e;
+  padding: 10px;
+  font-weight: 600;
 }
 
 /* LAYOUT */
@@ -206,16 +196,79 @@ img {
 
 #banner-title {
   font-family: "Cedarville Cursive", cursive;
-  font-size: 73px;
-  font-style: bold;
+  font-size: 95px;
   font-weight: 500;
-  -webkit-text-stroke: 2px #0e4813;
-  color: #f9fafb;
+  -webkit-text-stroke: 2px #2b6b78;
+  color: rgba(253, 253, 250, 0.5);
+}
+
+section h3 {
+  font-family: "Caveat", cursive;
+  font-size: 36px;
+}
+section p > strong {
+  font-family: "Caveat", cursive;
+  font-size: 28px;
+}
+
+.row {
+  justify-content: center;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+}
+.image-container img {
+  width: 100%;
+  height: 325px;
+  min-width: 400px;
+  min-height: 300px;
+}
+.image-container button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(45%, -430%);
+  -ms-transform: translate(45%, -430%);
+  background-color: rgba(253, 253, 250, 0.5);
+  color: #2b6b78;
+  font-size: 16px;
+  padding: 8px 15px;
+  border: 1px solid #2b6b78;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px #9b9b9b;
+}
+.image-container button:hover {
+  background-color: #E6DBAB;
+}
+
+.deleteButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(57%, 236%);
+  -ms-transform: translate(57%, 236%);
+  background-color: rgba(253, 253, 250, 0.5);
+  color: #f29321;
+  font-size: 16px;
+  padding: 8px 15px;
+  border: 1px solid #f29321;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px #9b9b9b;
+}
+
+.deleteButton:hover {
+  background-color: #E6DBAB;
 }
 
 #login-container {
-  background-color: #4c7863;
-  max-height: 500px;
+  background-color: rgba(158, 210, 220, 0.3);
+  height: 500px;
+  margin-top: 41px;
+  margin-bottom: 100px;
 }
 
 /* login codepen ----------------------------*/
@@ -257,6 +310,7 @@ img {
   background-color: #fff;
   margin-top: 100px;
   box-shadow: 1px 10px 30px -10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
 }
 
 .cont_forms {
@@ -284,6 +338,7 @@ img {
   -ms-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
+  border-radius: 10px;
 }
 
 .cont_forms_active_sign_up {
@@ -296,6 +351,7 @@ img {
   -ms-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
+  border-radius: 10px;
 }
 
 .cont_img_back_grey {
@@ -359,6 +415,7 @@ img {
   height: 280px;
   top: 100px;
   z-index: 1;
+  border-radius: 10px;
 }
 
 .col_md_login {
@@ -381,7 +438,7 @@ img {
 }
 
 .btn_login {
-  background-color: #FF9800;
+  background-color: #5f9433;
   border: none;
   padding: 10px;
   width: 200px;
@@ -401,12 +458,13 @@ img {
 .cont_ba_opcitiy > h2 {
   font-weight: 400;
   color: #fff;
+  font-family: "Caveat", cursive;
 }
 
 .cont_ba_opcitiy > p {
   font-weight: 400;
   margin-top: 15px;
-  color: #fff;
+  color: #2b6b78;
 }
 
 /* ----------------------------------
@@ -420,10 +478,11 @@ img {
   border-radius: 3px;
   margin-top: 60px;
   padding: 15px 0px;
+  border-radius: 10px;
 }
 
 .btn_sign_up {
-  background-color: #f44336;
+  background-color: #2b6b78;
   border: none;
   padding: 10px;
   width: 200px;
@@ -546,6 +605,7 @@ img {
   margin-top: 50px;
   font-weight: 400;
   color: #757575;
+  font-family: "Caveat", cursive;
 }
 
 .cont_form_login > input {
@@ -571,12 +631,6 @@ img {
   float: left;
   margin: 10px;
   margin-left: 30px;
-}
-
-.deleteButton {
-  cursor: pointer;
-  background-color: #a54747;
-  color: white;
 }
 
 @-webkit-keyframes AnimationName {

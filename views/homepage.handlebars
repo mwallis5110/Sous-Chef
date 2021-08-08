@@ -1,15 +1,10 @@
 <section class="">
   {{#if loggedIn}}
-  <h3 class="gallery-name">Welcome {{username}}</h3>
-  {{else }}
-
-  <h3 class="gallery-name">Welcome to Sous-Chef where you can browse and save recipes</h3>
-  {{/if}}
-  {{#if loggedIn}}
-  <h3 class="gallery-name">Browse our curated recipe list and save your favorites</h3>
+  <h3 class="gallery-name">Hi {{username}}! Browse our curated recipes and save your favorites</h3>
   {{else}}
+  <h3 class="gallery-name">Welcome to Sous-Chef where you can browse and save recipes</h3>
 </section>
-<div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel">
+<div id="carouselExampleSlidesOnly" class="carousel slide " data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="5000">
       <img src="/images/carousel_1.jpg" class="d-block w-100" alt="..." />
@@ -72,7 +67,7 @@
             <div class="cont_ba_opcitiy">
 
               <h2>LOGIN</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur.</p>
+              <p>Already have an account? Login here!</p>
               <button class="btn_login" onclick="cambiar_login()">LOGIN</button>
             </div>
           </div>
@@ -81,7 +76,7 @@
             <div class="cont_ba_opcitiy">
               <h2>SIGN UP</h2>
 
-              <p>Lorem ipsum dolor sit amet, consectetur.</p>
+              <p>Create an account and start cooking!</p>
 
               <button class="btn_sign_up" onclick="cambiar_sign_up()">SIGN UP</button>
             </div>

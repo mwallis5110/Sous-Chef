@@ -1,13 +1,17 @@
-<section class="card">
-  {{!-- <a href="/recipe/{{id}}"> --}}
+<section class="card col-6">
+  <h3>{{title}}</h3>
+  <div class="image-container">
     <img src="/images/{{filename}}">
-    <div class="painting-details">
-      <h3>{{title}}</h3>
-      <p>Ingredients: {{ingredients}}</p>
-      <p>Directions: {{ directions}}</p>
+  </div>
+  <button class="deleteButton" data-image="{{filename}}" data-title="{{title}}" data-id="{{id}}"
+    data-ingredients="{{ingredients}}" data-directions="{{directions}}">Remove Recipe</button>
+  <div class="row align-items-start">
+    <div class="col">
+      <p><strong> Ingredients: </strong><br> {{ingredients}}</p>
     </div>
-    <button class="deleteButton" data-image="{{filename}}" data-title="{{title}}" data-id="{{id}}" data-ingredients="{{ingredients}}" data-directions="{{directions}}">Delete Button</button>
-    {{!--
-  </a> --}}
+    <br>
+    <div class="col">
+      <p> <strong> Directions: </strong><br> {{ directions}}</p>
+    </div>
+  </div>
 </section>
-

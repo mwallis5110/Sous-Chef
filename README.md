@@ -1,5 +1,4 @@
-# Title 
-Sous Chef
+# Sous Chef
 
 ## Description 
 Sous Chef is a web application that allows a user to browse a recipe database and save recipes to their own user homepage/dashboard. From their homepage, they can access and delete recipes as they see fit.

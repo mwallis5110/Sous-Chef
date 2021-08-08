@@ -468,10 +468,6 @@ section p > strong {
 }
 
 /* Start by hiding the checkboxes*/
-input[type=checkbox] {
-  visibility: hidden;
-}
-
 .custom-checkbox {
   width: 15px;
   height: 15px;

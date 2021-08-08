@@ -467,6 +467,20 @@ section p > strong {
   color: #2b6b78;
 }
 
+/* Start by hiding the checkboxes*/
+input[type=checkbox] {
+  visibility: hidden;
+}
+
+.custom-checkbox {
+  width: 15px;
+  height: 15px;
+  background: #e26565;
+  margin: 5px;
+  position: relative;
+  border-radius: 5px;
+}
+
 /* ----------------------------------
   background text    
   ------------------------------------

@@ -488,6 +488,31 @@ section {
 }
 
 
+/* Start by hiding the checkboxes*/
+
+input[type=checkbox] {
+    visibility: hidden;
+}
+
+.custom-checkbox {
+    width: 15px;
+    height: 15px;
+    background: rgb(226, 101, 101);
+    margin: 5px;
+    position: relative;
+    border-radius: 5px;
+}
+
+//   /* the slider bar */
+//   .checkbox-example {
+//     width: 45px;
+//     height: 15px;
+//     background: #555;
+//     margin: 20px 80px;
+//     position: relative;
+//     border-radius: 5px;
+//   }
+
 /* ----------------------------------
   background text    
   ------------------------------------

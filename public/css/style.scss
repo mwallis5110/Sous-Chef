@@ -1,14 +1,14 @@
-:root {
-    --primary: #3d5852;
-    --secondary: #86938f;
-    --tertiary: #5e877f;
-    --quatrinary: #6c6b67;
-    --light: #e3e4e3;
-    --dark: #182c23;
-    --error: rgb(228, 46, 1);
-    --border-radius: 0.3rem;
-}
-
+// global color variables
+$blue: #9ed2dc;
+$blue-light: #cbe6ec;
+$blue-dark: #2b6b78;
+$orange: #f29321;
+$orange-light: #fad5a8;
+$yellow: #E6DBAB;
+$yellow-light: rgb(253, 253, 250, .5);
+$green: #5f9433;
+$green-light: #c7e4af;
+$green-dark: #38571e;
 body {
     font-family: Arial;
     margin: 0;
@@ -16,19 +16,22 @@ body {
     flex-direction: column;
     min-height: 100vh;
     justify-content: flex-start;
-    background-color: var(--quatrinary);
+    background-color: $blue;
 }
 
 #wrapper {
     justify-content: center;
     flex-direction: column;
     background-color: #9ed2dc;
-    background: linear-gradient( 180deg, #56872E, #f5c44f, #f29321, #f58870, #56872E);
+    background: linear-gradient( 180deg, $blue-light, $orange-light, $green-light, $blue-light);
     background-size: 1000% 1000%;
-    -webkit-animation: AnimationName 100s ease-in-out infinite;
-    -moz-animation: AnimationName 100s ease-in-out infinite;
-    animation: AnimationName 100s ease-in-out infinite;
+    -webkit-animation: AnimationName 50s ease-in-out infinite;
+    -moz-animation: AnimationName 50s ease-in-out infinite;
+    animation: AnimationName 50s ease-in-out infinite;
     display: flex;
+    width: 100%;
+    height: 100%;
+    background: cover;
 }
 
 .carousel-item {
@@ -42,21 +45,17 @@ body {
     }
 }
 
-a {
-    color: black;
-    text-decoration: none;
-}
-
-a:visited {
-    color: inherit;
-}
-
 header {
-    padding: 40px;
+    padding: 20px 5px 10px 5px;
     text-align: center;
-    background: #56872E;
+    background: $blue;
     color: white;
     width: 100%;
+    background: linear-gradient( 180deg, $green-light, $orange-light, $blue-light, $green-light);
+    background-size: 1000% 1000%;
+    -webkit-animation: AnimationName 50s ease-in-out infinite;
+    -moz-animation: AnimationName 50s ease-in-out infinite;
+    animation: AnimationName 50s ease-in-out infinite;
 }
 
 main {
@@ -67,24 +66,26 @@ main {
 
 aside {
     flex: 0;
-    background-color: var(--tertiary);
+    background-color: $blue;
     padding: 80px;
     text-align: left;
-    color: var(--light);
+    color: $blue-light;
 }
 
 nav {
-    a {
-        color: #80afdf;
+    background-color: $yellow-light;
+    width: 100%;
+    a,
+    span {
+        color: $blue-dark;
         font-weight: bold;
         text-decoration: none;
         text-align: center;
         vertical-align: bottom;
         padding: 4px;
         font-family: 'Caveat', cursive;
-    }
-    span {
-        padding: 0 10px 0 10px;
+        font-size: 25px;
+        margin-bottom: 14px;
     }
 }
 
@@ -93,17 +94,7 @@ nav a:hover,
 h2:hover,
 a:hover,
 i:hover {
-    color: rgb(181, 230, 160);
-}
-
-nav {
-    background-color: #e5f1eb;
-    color: #0e4813;
-    text-align: center;
-    font-family: "Caveat", cursive;
-    font-size: 25px;
-    width: 100%;
-    margin-bottom: 14px;
+    color: $blue;
 }
 
 .gallery {
@@ -145,25 +136,30 @@ img {
     font-weight: bold;
 }
 
-.deleteButton {
-    background-color: rgb(87, 36, 36);
-    padding: 1rem;
-    cursor: pointer;
-}
-
 
 /* CARDS */
+
+.card::-webkit-scrollbar {
+    background-color: $yellow-light;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.card::-webkit-scrollbar-thumb {
+    background-color: $blue-light;
+    border-radius: 10px;
+}
 
 .card {
     margin: 25px;
     flex: 0 1 300px;
-    border: 3px solid var(--dark);
+    border: 3px solid $blue-dark;
     border-radius: 10px;
-    background-color: white;
-    color: var(--dark);
+    background-color: $yellow-light;
+    color: $blue-dark;
     box-shadow: 8px 8px 15px #585858;
-    min-width: 29rem;
-    overflow: scroll;
+    min-width: 33rem;
+    overflow: auto;
     max-height: 505px;
 }
 
@@ -172,20 +168,20 @@ img {
     flex: 0 0 50%;
     max-width: 50%;
     padding: 5px;
-    border: 3px solid var(--dark);
-    border-radius: var(--border-radius);
+    border: 3px solid $blue-dark;
+    border-radius: $blue-dark;
     border-style: double;
     border-width: thick;
     background-color: #577a7c;
-    color: var(--light);
+    color: $blue-light;
 }
 
 .card header {
-    color: var(--light);
+    color: $blue-light;
     font-weight: bold;
     text-transform: uppercase;
     margin: 0;
-    background-color: var(--tertiary);
+    background-color: $blue;
     padding: 0.625rem;
     border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
 }
@@ -199,6 +195,9 @@ img {
 .gallery-name {
     font-size: 50px;
     font-family: 'Caveat', cursive;
+    color: $green-dark;
+    padding: 10px;
+    font-weight: 600;
 }
 
 
@@ -213,16 +212,81 @@ img {
 
 #banner-title {
     font-family: "Cedarville Cursive", cursive;
-    font-size: 73px;
-    font-style: bold;
+    font-size: 95px;
     font-weight: 500;
-    -webkit-text-stroke: 2px #0e4813;
-    color: #f9fafb;
+    -webkit-text-stroke: 2px $blue-dark;
+    color: $yellow-light;
+}
+
+section {
+    h3 {
+        font-family: 'Caveat', cursive;
+        font-size: 36px;
+    }
+    p>strong {
+        font-family: 'Caveat', cursive;
+        font-size: 28px;
+    }
+}
+
+.row {
+    justify-content: center;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    img {
+        width: 100%;
+        height: 325px;
+        min-width: 400px;
+        min-height: 300px;
+    }
+    button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(45%, -430%);
+        -ms-transform: translate(45%, -430%);
+        background-color: $yellow-light;
+        color: $blue-dark;
+        font-size: 16px;
+        padding: 8px 15px;
+        border: 1px solid $blue-dark;
+        cursor: pointer;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px #9b9b9b;
+    }
+    button:hover {
+        background-color: $yellow;
+    }
+}
+
+.deleteButton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(57%, 236%);
+    -ms-transform: translate(57%, 236%);
+    background-color: $yellow-light;
+    color: $orange;
+    font-size: 16px;
+    padding: 8px 15px;
+    border: 1px solid $orange;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #9b9b9b;
+}
+
+.deleteButton:hover {
+    background-color: $yellow;
 }
 
 #login-container {
-    background-color: #4c7863;
-    max-height: 500px;
+    background-color: rgba(158, 210, 220, 0.3);
+    height: 500px;
+    margin-top: 41px;
+    margin-bottom: 100px;
 }
 
 
@@ -266,6 +330,7 @@ img {
     background-color: #fff;
     margin-top: 100px;
     box-shadow: 1px 10px 30px -10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
 }
 
 .cont_forms {
@@ -293,6 +358,7 @@ img {
     -ms-transition: all 0.5s;
     -o-transition: all 0.5s;
     transition: all 0.5s;
+    border-radius: 10px;
 }
 
 .cont_forms_active_sign_up {
@@ -305,6 +371,7 @@ img {
     -ms-transition: all 0.5s;
     -o-transition: all 0.5s;
     transition: all 0.5s;
+    border-radius: 10px;
 }
 
 .cont_img_back_grey {
@@ -368,6 +435,7 @@ img {
     height: 280px;
     top: 100px;
     z-index: 1;
+    border-radius: 10px;
 }
 
 .col_md_login {
@@ -390,7 +458,7 @@ img {
 }
 
 .btn_login {
-    background-color: #FF9800;
+    background-color: $green;
     border: none;
     padding: 10px;
     width: 200px;
@@ -410,12 +478,13 @@ img {
 .cont_ba_opcitiy>h2 {
     font-weight: 400;
     color: #fff;
+    font-family: 'Caveat', cursive;
 }
 
 .cont_ba_opcitiy>p {
     font-weight: 400;
     margin-top: 15px;
-    color: #fff;
+    color: $blue-dark;
 }
 
 
@@ -431,10 +500,12 @@ img {
     border-radius: 3px;
     margin-top: 60px;
     padding: 15px 0px;
+    border-radius: 10px;
 }
 
 .btn_sign_up {
-    background-color: #f44336;
+    background-color: $blue-dark;
+    //alt color #2b6b78
     border: none;
     padding: 10px;
     width: 200px;
@@ -563,6 +634,7 @@ img {
     margin-top: 50px;
     font-weight: 400;
     color: #757575;
+    font-family: 'Caveat', cursive;
 }
 
 .cont_form_login>input {
@@ -588,12 +660,6 @@ img {
     float: left;
     margin: 10px;
     margin-left: 30px;
-}
-
-.deleteButton {
-    cursor: pointer;
-    background-color: rgb(165, 71, 71);
-    color: white;
 }
 
 @-webkit-keyframes AnimationName {

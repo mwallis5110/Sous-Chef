@@ -39,6 +39,8 @@ Sous Chef gives each user the ability to view and save recipes in their own dash
 </ul>
 
 ## Wireframes
+![Sous-Chef-Future Development Wireframe](https://user-images.githubusercontent.com/17009795/128642193-442e207b-6d9b-46a0-81c4-1b7fc2c003a7.png)
+![Sous Chef Wireframe](https://user-images.githubusercontent.com/17009795/128642214-a9a35a7a-715b-4401-aed9-57505deda3a1.png)
 
 
 ## Screenshots

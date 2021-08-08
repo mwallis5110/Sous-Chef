@@ -1,4 +1,4 @@
-console.log("JS FILE LAODED!!!!!!!!!!!");
+console.log("JS FILE LOADED!!!!!!!!!!!");
 document.querySelectorAll(".saveButton").forEach((item) => {
     item.addEventListener("click", (event) => {
         console.log("WE CLICKED THE BUTTON!");

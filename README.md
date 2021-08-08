@@ -47,7 +47,11 @@ Sous Chef gives each user the ability to view and save recipes in their own dash
 
 
 ## Screenshots
-
+# ![](images/screenshot-1.png)
+# ![](images/screenshot-2.png)
+# ![](images/screenshot-3.png)
+# ![](images/screenshot-4.png)
+# ![](images/screenshot-5.png)
 
 ## License
 #### [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)

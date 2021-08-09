@@ -7,19 +7,23 @@
     data-ingredients="{{ingredients}}" data-directions="{{directions}}">Remove Recipe</button>
   <div class="row align-items-start">
     <div class="col">
-      <p><strong> Ingredients: </strong><br>
+      <p><strong>Ingredients</strong><br>
         {{!-- {{ingredients}} --}}
         {{#each ingredients as |ingredient|}}
-        <input type="checkbox">{{ingredient}}</input><br>
+        <input type="checkbox" id="{{ingredient}}"></input>
+        <label for="{{ingredient}}">{{ingredient}}</label>
+        <br>
         {{/each}}
       </p>
     </div>
     <br>
     <div class="col">
-      <p> <strong> Directions: </strong><br>
+      <p> <strong> Directions</strong><br>
         {{!-- {{ directions}} --}}
         {{#each directions as |direction|}}
-        <input type="checkbox">{{direction}}</input><br>
+        <input type="checkbox" id="{{direction}}"></input>
+        <label for="{{direction}}">{{direction}}</label>
+        <br>
         {{/each}}
       </p>
     </div>

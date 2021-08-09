@@ -7,20 +7,23 @@
   </div>
   <div class="row align-items-start">
     <div class="col">
-      <p><strong> Ingredients: </strong><br>
+      <p><strong>Ingredients</strong><br>
         {{!-- {{ingredients}} --}}
-
         {{#each ingredients as |ingredient|}}
-        <input type="checkbox" class="custom-checkbox">{{ingredient}}</input><br>
+        <input type="checkbox" id="{{ingredient}}"></input>
+        <label for="{{ingredient}}">{{ingredient}}</label>
+        <br>
         {{/each}}
       </p>
     </div>
     <br>
-    <div class="col">
-      <p> <strong> Directions: </strong><br>
+    <div class=" col">
+      <p> <strong> Directions</strong><br>
         {{!-- {{ directions}} --}}
         {{#each directions as |direction|}}
-        <input type="checkbox" class="custom-checkbox">{{direction}}</input><br>
+        <input type="checkbox" id="{{direction}}"></input>
+        <label for="{{direction}}">{{direction}}</label>
+        <br>
         {{/each}}
       </p>
     </div>
